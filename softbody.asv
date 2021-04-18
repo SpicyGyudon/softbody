@@ -1,0 +1,15 @@
+% masspoint (potision, velocity, force, mass)
+% update : every frame (F=0 -> F+=gravity,spring, etc)
+%                       v+= F*dt/m
+%                       x+= v*dt
+%                       
+% spring mass model 
+%  Spring (Fs = Ks * (abs(B-A)-L0(평형길이)) )
+%  Damping (Fd = Kd * 속도차)
+%                      (B-A)/abs(B-A) dot (VB-VA)
+% Ft = Ks * (abs(B-A)-L0) + Kd * dot((B-A)/abs(B-A),(VB-VA))
+%      -> Fa = Ft * (B-A)/abs(B-A)
+%      -> Fb = Ft * (A-B)/abs(A-B)
+% collision (충돌감지 알고리즘) -> 벽의 X~Y 범위 설점 
+%     -> Raycasting  -> 점들간의 교점 CCW(Ai,Ai+1,P)
+Ax*By + Bx*Cy + Cx+Ay 
